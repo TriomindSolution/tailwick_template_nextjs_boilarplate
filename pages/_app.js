@@ -5,6 +5,7 @@ import Axios from "@/utils/axios";
 import Loader from "@/components/common/Loader";
 import Login from "./login";
 import { Slide, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyApp = ({ Component, pageProps }) => {
   const [isMounted, setIsMounted] = useState(false);

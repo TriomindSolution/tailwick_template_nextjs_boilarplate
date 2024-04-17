@@ -21,8 +21,8 @@ const Login = () => {
         event.preventDefault();
         try {
           const login = await post(SECURITY_END_POINT.login(), {  email: email,password: password });
-          // console.log(login);
-          // return; 
+          console.log(login);
+        //   return; 
           saveToken(login.data.user,login.data.access_token);
           notify("success", "successfully Login!");
     
