@@ -1,9 +1,14 @@
 import ToastMessage from '@/components/Toast';
+import { SECURITY_END_POINT } from '@/constants';
+import { post } from '@/helpers/api_helper';
 import React, { useState } from 'react'
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    console.log("email",email);
+    console.log("password",password);
+
     const notify = React.useCallback((type, message) => {
         ToastMessage({ type, message });
     }, []);
@@ -222,7 +227,7 @@ const Login = () => {
                                 Sign in to continue to Tailwick.
                             </p>
                         </div>
-                        <form action="index.html" className="mt-10" id="signInForm">
+                        <form  className="mt-10" >
                             <div
                                 className="hidden px-4 py-3 mb-3 text-sm text-green-500 border border-green-200 rounded-md bg-green-50 dark:bg-green-400/20 dark:border-green-500/50"
                                 id="successAlert"
@@ -289,6 +294,7 @@ const Login = () => {
                                 <button
                                     type="submit"
                                     className="w-full text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20"
+                                onClick={submitForm}
                                 >
                                     Sign In
                                 </button>
